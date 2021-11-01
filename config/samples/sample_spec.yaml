@@ -1,0 +1,7 @@
+apiVersion: example.com.my.domain/v1alpha1
+kind: Traveller
+metadata:
+  name: traveller-sample-spec
+spec:
+  image: "sample-image"
+  size: 2
