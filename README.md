@@ -95,4 +95,10 @@ metadata:
 
 ```
 
-### Reconcile Function
+## Reconcile Function
+
+### Minimal Working Example
+
+- Add a `Println` in Reconcile function
+- `kubctl create -f sample.yaml`
+-  check if the `Println` output shows up in the log `kubectl logs -n hello-operator-system hello-operator-controller-manager-6f8cdff894-mns9w manager` 
