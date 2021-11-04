@@ -16,4 +16,9 @@ resources:
   kind: Traveller
   path: operators/hello-operator/api/v1alpha1
   version: v1alpha1
+- controller: true
+  domain: my.domain
+  group: example.com
+  kind: Pod
+  version: v1alpha1
 version: "3"

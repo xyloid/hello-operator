@@ -9,6 +9,17 @@ rules:
 - apiGroups:
   - example.com.my.domain
   resources:
+  - pods
+  verbs:
+  - create
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - example.com.my.domain
+  resources:
   - travellers
   verbs:
   - create

@@ -103,3 +103,12 @@ metadata:
 - Add a `Println` in Reconcile function
 - `kubctl create -f sample.yaml`
 -  check if the `Println` output shows up in the log `kubectl logs -n hello-operator-system hello-operator-controller-manager-6f8cdff894-mns9w manager` 
+
+
+## Add Anonther Controller for Pod
+
+### Add a Controller without Resource
+
+```bash
+operator-sdk create api --group example.com --version v1alpha1 --kind=Pod --controller=true --resource=false
+```
