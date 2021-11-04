@@ -3,8 +3,10 @@
 This example is created based on two tutorials:
 
 - ['Hello, World' tutorial with Kubernetes Operators](https://developers.redhat.com/blog/2020/08/21/hello-world-tutorial-with-kubernetes-operators#set_up_your_environment)
-	- The command in this tutorial are outdated, we need to use other references to update this tutorial
+	- This tutorial is outdated, we need to use other references to update this tutorial
 - [Quickstart for Go-based Operators](https://sdk.operatorframework.io/docs/building-operators/golang/quickstart/)
+- [Another Interesting Interactive Tutorial](https://www.katacoda.com/openshift/courses/operatorframework/go-operator-podset)
+- [Very Interesting Tutorial About a Pod Controller](https://kubernetes.io/blog/2021/06/21/writing-a-controller-for-pod-labels/)
 
 
 ## Deploy the Operator with Direct Deploy
@@ -92,7 +94,6 @@ kind: List
 metadata:
   resourceVersion: ""
   selfLink: ""
-
 ```
 
 ## Reconcile Function
