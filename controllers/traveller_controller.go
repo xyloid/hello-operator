@@ -19,8 +19,6 @@ package controllers
 import (
 	"context"
 
-	"fmt"
-
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
@@ -52,7 +50,6 @@ func (r *TravellerReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 	_ = log.FromContext(ctx)
 
 	// your logic here
-	fmt.Println("Reconcile function is called")
 
 	return ctrl.Result{}, nil
 }
