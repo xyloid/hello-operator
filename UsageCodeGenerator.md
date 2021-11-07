@@ -35,3 +35,15 @@ git clone git@github.com:kubernetes/code-generator.git
 chmod +x ./code-generator/generate-groups.sh
 ```
 
+
+#### Update dependent version
+
+- Seems unnecessary here
+
+```bash
+K8S_VERSION=v0.18.5
+go get k8s.io/client-go@$K8S_VERSION
+go get k8s.io/apimachinery@$K8S_VERSION
+go get sigs.k8s.io/controller-runtime@v0.6.0
+go mod vendor
+```
