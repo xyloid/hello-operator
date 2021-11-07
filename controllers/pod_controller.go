@@ -22,6 +22,7 @@ import (
 
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/apimachinery/pkg/runtime/schema"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
@@ -39,6 +40,12 @@ type PodInfo struct {
 	nodename    string
 	cpu_limit   int
 	cpu_request int
+}
+
+var groupVersionResource = schema.GroupVersionResource{
+	Group:    "example.com.my.domain",
+	Version:  "v1alpha1",
+	Resource: "travellers",
 }
 
 //+kubebuilder:rbac:groups=core,resources=pods,verbs=get;list;watch;create;update;patch;delete
