@@ -112,3 +112,7 @@ metadata:
 ```bash
 operator-sdk create api --group example.com --version v1alpha1 --kind=Pod --controller=true --resource=false
 ```
+
+### Observations
+
+- Not always a `Running` phase, pod can change from `Pending` phase to `Running` phase.
