@@ -26,7 +26,26 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
+
+	travellerv1alpha1 "../api/v1alpha1"
+
+	clientgoscheme "k8s.io/client-go/kubernetes/scheme"
+
+	// +kubebuilder:scaffold:imports
+	travellerclientset "../example.com/hello-operator/generated/example.com/clientset/versioned"
 )
+
+var (
+	myscheme = runtime.NewScheme()
+	setupLog = ctrl.Log.WithName("setup")
+)
+
+func init() {
+	_ = clientgoscheme.AddToScheme(myscheme)
+
+	_ = travellerv1alpha1.AddToScheme(myscheme)
+	// +kubebuilder:scaffold:scheme
+}
 
 // PodReconciler reconciles a Pod object
 type PodReconciler struct {
@@ -103,6 +122,14 @@ func (r *PodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.R
 // SetupWithManager sets up the controller with the Manager.
 func (r *PodReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	r.podInfo = make(map[string]PodInfo)
+
+	kubeConfig := ctrl.GetConfigOrDie()
+
+	// clienset
+	clientset := travellerclientset.NewForConfigOrDie(kubeConfig)
+
+	fmt.Println(clientset)
+
 	return ctrl.NewControllerManagedBy(mgr).
 		// Uncomment the following line adding a pointer to an instance of the controlled resource as an argument
 		For(&corev1.Pod{}).
