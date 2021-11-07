@@ -49,3 +49,13 @@ go mod vendor
 ```
 
 ## Generating code
+
+```bash
+cd ./hack/
+chmod +x *.sh
+```
+
+```bash
+# in hello-operator dir
+./hack/update-codegen.sh
+```
