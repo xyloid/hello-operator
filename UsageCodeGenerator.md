@@ -47,3 +47,5 @@ go get k8s.io/apimachinery@$K8S_VERSION
 go get sigs.k8s.io/controller-runtime@v0.6.0
 go mod vendor
 ```
+
+## Generating code

@@ -7,7 +7,7 @@ set -o pipefail
 # corresponding to go mod init <module>
 MODULE=example.com/hello-operator
 # api package
-APIS_PKG=apis
+APIS_PKG=api
 # generated output package
 OUTPUT_PKG=generated/example.com
 # group-version such as foo:v1alpha1
